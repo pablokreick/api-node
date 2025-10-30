@@ -10,6 +10,10 @@ app.get('/character', (req, res) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('API de personajes lista para usar 🚀');
+});
+
 app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`);
 });
