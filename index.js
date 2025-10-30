@@ -3,12 +3,14 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const characters = [
-  { id: 1, name: 'Rick Sanchez', species: 'Human', status: 'Alive' },
-  { id: 2, name: 'Morty Smith', species: 'Human', status: 'Alive' },
-  { id: 3, name: 'Birdperson', species: 'Bird-Person', status: 'Dead' },
-  { id: 4, name: 'Mr. Meeseeks', species: 'Meeseeks', status: 'Unknown' }
+  { id: 1, name: 'Rick Sanchez', species: 'Human', status: 'Alive', image: 'https://api-node-production-08b0.up.railway.app/morty.jpeg' },
+  { id: 2, name: 'Morty Smith', species: 'Human', status: 'Alive', image: 'https://api-node-production-08b0.up.railway.app/morty.jpeg' },
+  { id: 3, name: 'Birdperson', species: 'Bird-Person', status: 'Dead', image: 'https://api-node-production-08b0.up.railway.app/morty.jpeg' },
+  { id: 4, name: 'Mr. Meeseeks', species: 'Meeseeks', status: 'Unknown', image: 'https://api-node-production-08b0.up.railway.app/morty.jpeg' }
 ];
 
+
+app.use('/images', express.static('public/images'));
 
 app.get('/character', (req, res) => {
     const {name} = req.query
